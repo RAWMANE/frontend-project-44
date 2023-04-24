@@ -19,7 +19,7 @@ function isPrime(number) {
   
     for (let i = 0; i < 3; i++) {
       let number = Math.floor(Math.random() * 100) + 1;
-      let correctAnswer = isPrime(number) ? "yes" : "no";
+      let correctAnswer = isPrime(number) ? 'yes' : 'no';
       let answer = readlineSync.question(`Question: ${number}\nYour answer:`).toLowerCase();
   
       if (answer === correctAnswer) {

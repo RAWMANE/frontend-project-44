@@ -13,11 +13,11 @@ function isPrime(number) {
   export default function brainPrime() {
     console.log("Welcome to the Brain Games!");
     const name =  readlineSync.question("May I have your name? ");
-    
+
     console.log(`Hello, ${name}!`);
     console.log("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
     for (let i = 0; i < 3; i++) {
-      let number = Math.floor(Math.random() * 100) + 1;
+      let number = Math.floor(Math.random() * 10) + 1;
       let correctAnswer = isPrime(number) ? 'yes' : 'no';
       let answer = readlineSync.question(`Question: ${number}\nYour answer:`).toLowerCase();
       if (answer === correctAnswer) {

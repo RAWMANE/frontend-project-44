@@ -33,5 +33,5 @@ function isPrime(number) {
   
     console.log(`Congratulations, ${name}!`);
   }
-  
+
   

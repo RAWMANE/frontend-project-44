@@ -6,20 +6,17 @@ import readlineSync from 'readline-sync'
     }
     return progression;
   }
-  
    function hideRandomNumber(progression) {
     let hiddenIndex = Math.floor(Math.random() * progression.length);
     let hiddenValue = progression[hiddenIndex];
     progression[hiddenIndex] = "..";
     return { progression, hiddenValue };
   }
-  
   export default function brainProgression() {
     console.log("Welcome to the Brain Games!");
     let name =  readlineSync.question("May I have your name?");
     console.log(`Hello, ${name}!`);
     console.log("What number is missing in the progression?");
-  
     for (let i = 0; i < 3; i++) {
       let start = Math.floor(Math.random() * 50) + 1;
       let diff = Math.floor(Math.random() * 10) + 1;
@@ -39,4 +36,3 @@ import readlineSync from 'readline-sync'
   
     console.log(`Congratulations, ${name}!`);
   }
-  

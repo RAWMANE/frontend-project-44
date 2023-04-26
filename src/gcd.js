@@ -26,10 +26,3 @@ function gcd(a, b) {
     }
    console.log(`Congratulations, ${name}!`);
   }
-
-
-  
- 
-
-
-

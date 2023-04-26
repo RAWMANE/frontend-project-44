@@ -10,11 +10,12 @@ function isPrime(number) {
     }
     return true;
   }
-  export default function brainPrime() {
+
     console.log("Welcome to the Brain Games!");
     const name =  readlineSync.question("May I have your name? ");
 
     console.log(`Hello, ${name}!`);
+    export default function brainPrime() {
     console.log("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
     for (let i = 0; i < 3; i++) {
       let number = Math.floor(Math.random() * 10) + 1;
@@ -23,7 +24,7 @@ function isPrime(number) {
       if (answer === correctAnswer) {
         console.log("Correct!");
       } else {
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+        console.log(`'${answer}' is wrong answer;(. Correct answer was '${correctAnswer}'.`);
         console.log(`Let's try again, ${name}!`);
         return;
       }

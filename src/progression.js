@@ -1,5 +1,9 @@
 import readlineSync from 'readline-sync';
 
+console.log('Welcome to the Brain Games!');
+const name = readlineSync.question('May I have your name?');
+console.log(`Hello, ${name}!`);
+console.log('What number is missing in the progression?');
 function generateProgression(start, diff, length) {
   const progression = [start];
   for (let i = 1; i < length; i += 1) {
@@ -15,10 +19,6 @@ function hideRandomNumber(progression) {
   return { progression, hiddenValue };
 }
 export default function brainProgression() {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name?');
-  console.log(`Hello, ${name}!`);
-  console.log('What number is missing in the progression?');
   for (let i = 0; i < 3; i += 0) {
     const start = Math.floor(Math.random() * 50) + 1;
     const diff = Math.floor(Math.random() * 10) + 1;

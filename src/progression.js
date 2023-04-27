@@ -1,42 +1,38 @@
-import readlineSync from 'readline-sync';
-
-console.log('Welcome to the Brain Games!');
-const name = readlineSync.question('May I have your name?');
-console.log(`Hello, ${name}!`);
-
-function generateProgression(start, diff, length) {
-  const progression = [start];
-  for (let i = 1; i < length; i += 1) {
-    progression.push(start + diff * i);
-  }
-  return progression;
-}
-function hideRandomNumber(progression) {
-  const hiddenIndex = Math.floor(Math.random() * progression.length);
-  const hiddenValue = progression[hiddenIndex];
-  // eslint-disable-next-line no-param-reassign
-  progression[hiddenIndex] = '..';
-  return { progression, hiddenValue };
-}
-export default function brainProgression() {
-  console.log('What number is missing in the progression?');
-  for (let i = 0; i < 3; i += 0) {
-    const start = Math.floor(Math.random() * 50) + 1;
-    const diff = Math.floor(Math.random() * 10) + 1;
-    const length = Math.floor(Math.random() * 6) + 5;
-    const { progression, hiddenValue } = hideRandomNumber(generateProgression(start, diff, length));
-    const correctAnswer = hiddenValue;
-    const answer = readlineSync.question(`Question: ${progression.join(' ')}\nYour answer:`);
-
-    // eslint-disable-next-line radix
-    if (parseInt(answer) === correctAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${answer}' is wrong answer;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
-      return;
+import readlineSync from 'readline-sync'
+  function generateProgression(start, diff, length) {
+    let progression = [start];
+    for (let i = 1; i < length; i++) {
+      progression.push(start + diff * i);
     }
+    return progression;
   }
-
-  console.log(`Congratulations, ${name}!`);
-}
+   function hideRandomNumber(progression) {
+    let hiddenIndex = Math.floor(Math.random() * progression.length);
+    let hiddenValue = progression[hiddenIndex];
+    progression[hiddenIndex] = "..";
+    return { progression, hiddenValue };
+  }
+  export default function brainProgression() {
+    console.log("Welcome to the Brain Games!");
+    let name =  readlineSync.question("May I have your name?");
+    console.log(`Hello, ${name}!`);
+    console.log("What number is missing in the progression?");
+    for (let i = 0; i < 3; i++) {
+      let start = Math.floor(Math.random() * 50) + 1;
+      let diff = Math.floor(Math.random() * 10) + 1;
+      let length = Math.floor(Math.random() * 6) + 5;
+      let { progression, hiddenValue } = hideRandomNumber(generateProgression(start, diff, length));
+      let correctAnswer = hiddenValue;
+      let answer = readlineSync.question(`Question: ${progression.join(" ")}\nYour answer:`);
+  
+      if (parseInt(answer) === correctAnswer) {
+        console.log("Correct!");
+      } else {
+        console.log(`'${answer}' is wrong answer;(. Correct answer was '${correctAnswer}'.`);
+        console.log(`Let's try again, ${name}!`);
+        return;
+      }
+    }
+  
+    console.log(`Congratulations, ${name}!`);
+  }

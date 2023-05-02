@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import brainProgression from "../src/progression.js";
+// eslint-disable-next-line import/extensions
+import brainProgression from '../src/progression.js';
 
-brainProgression()
+brainProgression();

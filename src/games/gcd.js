@@ -6,7 +6,7 @@ function gcd(a, b) {
   }
   return gcd(b, a % b);
 }
-export default function brainGcd() {
+export default function greatestCommonDivisior() {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name?');
   console.log(`Hello, ${name}!`);

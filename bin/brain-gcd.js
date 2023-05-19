@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// eslint-disable-next-line import/extensions
-import brainGcd from '../src/gcd.js';
+import greatestCommonDivisior from '../src/games/gcd.js';
 
-brainGcd();
+greatestCommonDivisior();

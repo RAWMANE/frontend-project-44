@@ -1,7 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/RAWMANE/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/RAWMANE/frontend-project-44/actions)
 
-[![Badges](https://api.codeclimate.com/v1/badges/769b7b913bdb4f834bf7/maintainability)](https://codeclimate.com/RAWMANE/frontend-project-44)
+[![Badges](https://api.codeclimate.com/v1/badges/769b7b913bdb4f834bf7/maintainability)](https://codeclimate.com/github/RAWMANE/frontend-project-44)
 
 ### How to install and setup:
 1. Copy and write in terminal:

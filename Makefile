@@ -9,12 +9,12 @@ lint :
 fix :
 	npx eslint . --fix
 brain-even :
-	node src/games/even.js
+	node bin/brain-even.js
 brain-calc :
-	node  src/games/calc.js
+	node bin/brain-calc.js
 brain-gcd :
-	node src/games/gcd.js
+	node bin/brain-gcd.js
 brain-progression :
-	node src/games/progression.js
+	node bin/brain-progression.js
 brain-prime :
-	node src/games/prime.js
+	node bin/brain-prime.js

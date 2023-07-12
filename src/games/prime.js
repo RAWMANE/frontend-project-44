@@ -1,6 +1,6 @@
 import getRandomIntInclusive from '../random.js';
 import roundLogic from '../index.js';
-import { getQuestionAndAnswerArray } from '../utils.js';
+import { getQuestionAndAnswerArray } from '../util.js';
 
 const notPrimeDividers = [2, 3, 5, 7, 11];
 

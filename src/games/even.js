@@ -1,6 +1,6 @@
 import getRandomIntInclusive from '../random.js';
 import roundLogic from '../index.js';
-import { getQuestionAndAnswerArray } from '../utils.js';
+import { getQuestionAndAnswerArray } from '../util.js';
 
 const even = (num) => num % 2 === 0;
 

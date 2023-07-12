@@ -1,6 +1,6 @@
 import getRandomIntInclusive from '../random.js';
 import roundLogic from '../index.js';
-import { getQuestionAndAnswerArray } from '../util.js';
+import { getQuestionAndAnswerArray } from '../utils.js';
 
 const getRandomProgression = () => {
   const progression = [];

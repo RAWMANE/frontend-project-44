@@ -1,36 +1,25 @@
-import readlineSync from 'readline-sync';
+import getRandomIntInclusive from '../random.js';
+import roundLogic from '../index.js';
+import { getQuestionAndAnswerArray } from '../util.js';
 
-function isPrime(number) {
-  if (number < 2) {
-    return false;
-  }
-  for (let i = 2; i <= Math.sqrt(number); i += 1) {
-    if (number % i === 0) {
-      return false;
+const notPrimeDividers = [2, 3, 5, 7, 11];
+
+const primeRule = () => {
+  const question = getRandomIntInclusive(1, 100);
+  let rightAnswer;
+  for (let i = notPrimeDividers.length; i >= 0; i -= 1) {
+    if (question % notPrimeDividers[i] !== 0 || notPrimeDividers.includes(question) === true) {
+      rightAnswer = 'yes';
+    } else {
+      rightAnswer = 'no';
+      break;
     }
   }
-  return true;
-}
+  return [question, rightAnswer];
+};
+
+const desc = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
 export default function brainPrime() {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name?');
-  console.log(`Hello, ${name}!`);
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-
-  for (let i = 0; i < 3; i += 1) {
-    const number = Math.floor(Math.random() * 100) + 1;
-    const correctAnswer = isPrime(number) ? 'yes' : 'no';
-    const answer = readlineSync.question(`Question: ${number}\nYour answer:`).toLowerCase();
-
-    if (answer === correctAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
-      return;
-    }
-  }
-
-  console.log(`Congratulations, ${name}!`);
+  roundLogic(getQuestionAndAnswerArray(3, primeRule), desc);
 }

@@ -1,29 +1,24 @@
-#!/usr/bin/env node
-import readlineSync from 'readline-sync';
+import getRandomIntInclusive from '../random.js';
+import roundLogic from '../index.js';
+import { getQuestionAndAnswerArray } from '../util.js';
 
-console.log('Welcome to the Brain Games!');
-const name = readlineSync.question('May I have your name?');
-console.log(`Hello, ${name}!`);
-function gcd(a, b) {
-  if (b === 0) {
-    return a;
+function gcdrec(a, b) {
+  if (b) {
+    return gcdrec(b, a % b);
   }
-  return gcd(b, a % b);
+  return Math.abs(a);
 }
-export default function greatestCommonDivisior() {
-  console.log('Find the greatest common divisor of given numbers.');
-  for (let i = 0; i < 3; i += 1) {
-    const num1 = Math.floor(Math.random() * 100) + 1;
-    const num2 = Math.floor(Math.random() * 100) + 1;
-    const correctAnswer = gcd(num1, num2);
-    const answer = readlineSync.question(`Question: ${num1} ${num2}\nYour answer:`);
-    if (parseInt(answer, 10) === correctAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${answer}' is wrong answer;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
-      return;
-    }
-  }
-  console.log(`Congratulations, ${name}!`);
+
+const gcdRule = () => {
+  const num1 = getRandomIntInclusive(1, 100);
+  const num2 = getRandomIntInclusive(1, 100);
+  const question = `${num1} ${num2}`;
+  const rightAnswer = gcdrec(num1, num2);
+  return [question, rightAnswer];
+};
+
+const desc = 'Find the greatest common divisor of given numbers.';
+
+export default function  greatestCommonDivisior() {
+  roundLogic(getQuestionAndAnswerArray(3, gcdRule), desc);
 }

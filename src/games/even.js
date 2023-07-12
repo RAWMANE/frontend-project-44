@@ -1,4 +1,4 @@
-import getRandomIntInclusive from '../random-num-in-range-inclusive.js';
+import getRandomIntInclusive from '../random.js';
 import roundLogic from '../index.js';
 import { getQuestionAndAnswerArray } from '../util.js';
 

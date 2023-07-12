@@ -1,7 +1,7 @@
 import {
     askUserAnswer, isUserRightCheck, congratulations,
   } from './util.js';
-  import hello from './hello.js';
+  import hello from './greeting.js';
   
   function roundLogic(rule, description) {
     const name = hello(description);

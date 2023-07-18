@@ -19,6 +19,6 @@ const gcdRule = () => {
 
 const desc = 'Find the greatest common divisor of given numbers.';
 
-export default function  greatestCommonDivisior() {
+export default function greatestCommonDivisior() {
   roundLogic(getQuestionAndAnswerArray(3, gcdRule), desc);
 }
